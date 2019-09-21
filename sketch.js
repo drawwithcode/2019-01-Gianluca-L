@@ -6,7 +6,7 @@ function setup() {
   // put setup code here
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  //frameRate(12);
+  frameRate(60);
 
 }
 
@@ -24,11 +24,50 @@ function draw() {
   if (frameCount == 60) {
     noLoop();
   }*/
-  translate((3*width)/4, height/2);
-   let a = 0.0;
-let inc = 2;
-for (let i = 0; i < 180; i++) {
-  line(0, 0, -(width/4)*(1-cos(a)), (width/4)*sin(a));
-  a = a + inc;
-}
+  strokeWeight(1.5);
+  translate((3*width)/4.25, height/2);
+
+
+
+  stroke("red");
+  line(0, 0, -(width/5)*(1-cos(frameCount*1)), (width/5)*sin(frameCount*1));
+
+  stroke("orange");
+  line(0, 0, -(width/5)*(1-cos(frameCount*1.2)), (width/5)*sin(frameCount*1.2));
+
+  stroke("yellow");
+  line(0, 0, -(width/5)*(1-cos(frameCount*1.4)), (width/5)*sin(frameCount*1.4));
+
+  stroke("green");
+  line(0, 0, -(width/5)*(1-cos(frameCount*1.6)), (width/5)*sin(frameCount*1.6));
+
+  stroke(0, 255, 255)
+  line(0, 0, -(width/5)*(1-cos(frameCount*1.8)), (width/5)*sin(frameCount*1.8));
+
+  stroke("blue");
+  line(0, 0, -(width/5)*(1-cos(frameCount*2.1)), (width/5)*sin(frameCount*2.1));
+
+  stroke("violet");
+  line(0, 0, -(width/5)*(1-cos(frameCount*2.3)), (width/5)*sin(frameCount*2.3));
+
+
+
+
+  let a = 0.0;
+  let inc = 2;
+  for (let i = 0; i < 180; i++) {
+    stroke("black")
+    line(0, 0, -(width/5)*(1-cos(a)), (width/5)*sin(a));
+    a = a + inc;
+  }
+
+
+
+/*stroke(
+  lerpColor(
+    color("aquamarine"),
+    color("tomato"),
+    frameCount / 120
+  )
+);*/
 }
