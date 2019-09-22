@@ -10,44 +10,17 @@ function setup() {
   angleMode(DEGREES);
   frameRate(60);
   r = width/6;
-
   s = 60; // 1 second
-
+  a = 0;
+  b = 0;
+  c = 0;
+  d = 0;
+  e = 0;
 }
 
 function draw() {
 
-
-
-  //background("black");
-
-
   translate(2*width/3, height/2);
-
-
-  //stroke("red");
-  //line(-r*(1-cos(frameCount*1)), r*sin(frameCount*1), 0, 0);
-
-  /*stroke("orange");
-  line(-r*(1-cos(frameCount*1.2)), r*sin(frameCount*1.2), 0, 0);
-
-  stroke("yellow");
-  line(-r*(1-cos(frameCount*1.4)), r*sin(frameCount*1.4), 0, 0);
-
-  stroke("green");
-  line(-r*(1-cos(frameCount*1.6)), r*sin(frameCount*1.6), 0, 0);
-
-  stroke(0, 255, 255);
-  line(-r*(1-cos(frameCount*1.8)), r*sin(frameCount*1.8), 0, 0);
-
-  stroke("blue");
-  line(-r*(1-cos(frameCount*2.1)), r*sin(frameCount*2.1), 0, 0);
-
-  stroke("violet");
-  line(-r*(1-cos(frameCount*2.3)), r*sin(frameCount*2.3), 0, 0);*/
-
-
-  //background("black");
 
   if (frameCount > 2*s && frameCount < 4*s ) {
     strokeWeight(2.5);
@@ -60,6 +33,59 @@ function draw() {
     stroke("green");
     line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
   };
+
+
+  if (frameCount > 4*s && a < 360) {
+    a += 2;
+    b += 2;
+    c += 2;
+    d += 2;
+    e += 2;
+    //arc(-r, 0, 2*r, 2*r, 0, a, HALF_PI);
+
+
+    if (a < 90) {
+      fill("black")
+      stroke("black");
+      rect(-r, 0, width/2, height/2);
+      // down right
+      stroke("red");
+  
+      line(width/3, height/2, -r*(1-cos(a)), r*sin(a));
+    }
+    if (b > 90 && b < 180) {
+      // down left
+      fill("black")
+      stroke("black");
+      rect(-r -width/2, 0, width/2, height/2);
+      stroke("red");
+    
+      line(-r - width/2, height/2, -r*(1-cos(b)), r*sin(b));
+    }
+    if (c > 180 && c < 270) {
+      // up left
+      fill("black")
+      stroke("black");
+      rect(-r -width/2, -height/2, width/2, height/2);
+      stroke("red");
+      
+      line(-r - width/2, -height/2, -r*(1-cos(c)), r*sin(c));
+    }
+    if (d > 270 && d < 360) {
+      // up right
+      fill("black")
+      stroke("black");
+      rect(-r, 0, width/2, -height/2);
+      stroke("red");
+      
+      line(width/3, -height/2, -r*(1-cos(d)), r*sin(d));
+    }
+    arc(-r, 0, 2*r, 2*r, 0, a, HALF_PI);
+    noFill();
+  }
+
+
+
 
 
   /*stroke("green");
