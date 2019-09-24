@@ -20,20 +20,10 @@ function setup() {
 }
 
 function draw() {
-
+  //line(width, 0, mouseX, mouseY);
   translate(2*width/3, height/2);
 
-  if (frameCount > 2*s && frameCount < 4*s ) {
-    strokeWeight(2.5);
-    stroke("black");
-    line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
-  };
-  if (frameCount < 2*s) {
 
-    strokeWeight(1.5);
-    stroke("red");
-    line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
-  };
 
   // Inside
 
@@ -98,35 +88,32 @@ function draw() {
     noFill();
   }
 
+  if (frameCount > 2*s && frameCount < 4*s ) {
+    strokeWeight(3.5);
+    stroke("black");
+    line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
+  };
+  if (frameCount < 2*s) {
+    strokeWeight(2.5);
+    stroke("red");
+    line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
+  };
 
 
 
-
-  /*stroke("green");
-  strokeWeight(1.5);
-  for (i = 0; i < 360; i+=2) {
-    line(0, 0, -r*(1-cos(i)), r*sin(i))
-  };*/
-
-
-
-
-
-
-
-
+  /*push();
+  stroke("black");
+  strokeWeight(0.6);
+  for (i = 0; i < 360; i+=6) {
+    fig2 = line(0, 0, -r/5*(1-cos(i)), r/5*sin(i))
+  };
+  stroke("green");
+  strokeWeight(0.5);
+  for (i = 0; i < 360; i+=6) {
+    fig1 = line(0, 0, -r/5*(1-cos(i)), r/5*sin(i))
+  };
+  pop();*/
 
 
 
-
-
-
-
-/*stroke(
-  lerpColor(
-    color("aquamarine"),
-    color("tomato"),
-    frameCount / 120
-  )
-);*/
 }
