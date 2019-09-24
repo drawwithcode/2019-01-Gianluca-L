@@ -16,6 +16,7 @@ function setup() {
   c = 0;
   d = 0;
   e = 0;
+  f = 0;
 }
 
 function draw() {
@@ -36,9 +37,16 @@ function draw() {
 
   // Inside
 
+
+  if (frameCount > 10*s && f < 360) {
+    f += 3;
+    strokeWeight(1);
+    line( -r/2 -r*(1-cos(f + 90))/2, r*sin(f + 90)/2, -r/2 -r*(1-cos(f + 200))/2, r*sin(f + 200)/2);
+  };
+
   if (frameCount > 7*s && e < 360) {
     e += 2;
-    line( -r*(1-cos(e - 4)), r*sin(e - 4), -r*(1-cos(e + 120)), r*sin(e + 120));
+    line( -r*(1-cos(e - 4)), r*sin(e - 4), -r*(1-cos(e + 110)), r*sin(e + 110));
   };
 
 
