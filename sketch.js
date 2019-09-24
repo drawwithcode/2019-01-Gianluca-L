@@ -30,8 +30,15 @@ function draw() {
   if (frameCount < 2*s) {
 
     strokeWeight(1.5);
-    stroke("green");
+    stroke("red");
     line(0, 0, -r*(1-cos(frameCount*3)), r*sin(frameCount*3));
+  };
+
+  // Inside
+
+  if (frameCount > 7*s && e < 360) {
+    e += 2;
+    line( -r*(1-cos(e - 4)), r*sin(e - 4), -r*(1-cos(e + 120)), r*sin(e + 120));
   };
 
 
@@ -40,7 +47,6 @@ function draw() {
     b += 2;
     c += 2;
     d += 2;
-    e += 2;
     //arc(-r, 0, 2*r, 2*r, 0, a, HALF_PI);
 
 
@@ -50,7 +56,7 @@ function draw() {
       rect(-r, 0, width/2, height/2);
       // down right
       stroke("red");
-  
+      //arc(-r, 0, 2*r, 2*r, 0, a, HALF_PI)
       line(width/3, height/2, -r*(1-cos(a)), r*sin(a));
     }
     if (b > 90 && b < 180) {
@@ -59,7 +65,7 @@ function draw() {
       stroke("black");
       rect(-r -width/2, 0, width/2, height/2);
       stroke("red");
-    
+      //arc(-r, 0, 2*r, 2*r, 90, a, HALF_PI)
       line(-r - width/2, height/2, -r*(1-cos(b)), r*sin(b));
     }
     if (c > 180 && c < 270) {
@@ -68,7 +74,7 @@ function draw() {
       stroke("black");
       rect(-r -width/2, -height/2, width/2, height/2);
       stroke("red");
-      
+      //arc(-r, 0, 2*r, 2*r, 180, a, HALF_PI)
       line(-r - width/2, -height/2, -r*(1-cos(c)), r*sin(c));
     }
     if (d > 270 && d < 360) {
@@ -77,7 +83,7 @@ function draw() {
       stroke("black");
       rect(-r, 0, width/2, -height/2);
       stroke("red");
-      
+      //arc(-r, 0, 2*r, 2*r, 270, a, HALF_PI)
       line(width/3, -height/2, -r*(1-cos(d)), r*sin(d));
     }
     arc(-r, 0, 2*r, 2*r, 0, a, HALF_PI);
